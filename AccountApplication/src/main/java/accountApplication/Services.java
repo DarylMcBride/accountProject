@@ -4,35 +4,39 @@ import java.util.Map;
 
 import com.google.gson.Gson;
 
-
 public class Services {
 
-	public Map<Integer, Account> addAccount(Account account, Map<Integer, Account> map) {
-		int temp = 0;
+	public Map<Integer, String> addAccount(Account account, Map<Integer, String> map) {
 
-		for (int i = 0; i <= map.size(); i++) {
-			if (i > temp) {
-				temp = i;
-			}
-		}
-		map.put(temp, account);
+		map.put(account.getAccountNumber(), account.getfName());
 
 		return map;
 
 	}
 
-	public void getAccount(int id, Map<Integer, Account> map) {
-		
+	public void getAccount(int id, Map<Integer, String> map) {
+
 		if (map.get(Integer.valueOf(id)) != null) {
 			System.out.println(map.get(Integer.valueOf(id)));
 		}
-		
+
 	}
-	
-	public void getJson(Map<Integer, Account> map) {
-		
-		
+
+	public void getJson(Map<Integer, String> map) {
+
 		System.out.println(new Gson().toJson(map));
+	}
+
+	public int getCountFirstName(String fName, Map<Integer, String> map) {
+		int result = 0;
+
+		for (Map.Entry<Integer, String> entry : map.entrySet()) {
+			if (entry.getValue().equals(fName)) {
+				result++;
+			}
+		}
+
+		return result;
 	}
 
 }
