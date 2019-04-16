@@ -4,9 +4,9 @@ public class Account {
 
 	private String fName;
 	private String lName;
-	private float accountNumber;
+	private int accountNumber;
 
-	public Account(String fName, String lName, float accountNumber) {
+	public Account(String fName, String lName, int accountNumber) {
 		this.fName = fName;
 		this.lName = lName;
 		this.accountNumber = accountNumber;
@@ -28,11 +28,11 @@ public class Account {
 		this.lName = lName;
 	}
 
-	public float getAccountNumber() {
+	public int getAccountNumber() {
 		return accountNumber;
 	}
 
-	public void setAccountNumber(float accountNumber) {
+	public void setAccountNumber(int accountNumber) {
 		this.accountNumber = accountNumber;
 	}
 
