@@ -2,6 +2,9 @@ package accountApplication;
 
 import java.util.Map;
 
+import com.google.gson.Gson;
+
+
 public class Services {
 
 	public Map<Integer, Account> addAccount(Account account, Map<Integer, Account> map) {
@@ -24,6 +27,12 @@ public class Services {
 			System.out.println(map.get(Integer.valueOf(id)));
 		}
 		
+	}
+	
+	public void getJson(Map<Integer, Account> map) {
+		
+		
+		System.out.println(new Gson().toJson(map));
 	}
 
 }
